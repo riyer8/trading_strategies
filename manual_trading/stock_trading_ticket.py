@@ -24,7 +24,7 @@ def submit_trade():
 
     try:
         stock = yf.Ticker(ticker)
-        price = stock.history(period="1d")['Close'][0]
+        price = stock.history(period="1d")['Close'].iloc[0]
     except IndexError:
         messagebox.showerror("Ticker Error", "Ticker not found. Please enter a valid ticker symbol.")
         return

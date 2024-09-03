@@ -26,8 +26,8 @@ def calculate_options_portfolio_value():
         
         gain_loss = 0
         for _, trade in trades.iterrows():
-            option_type = trade['Type']
-            bought_price = trade['Price']
+            option_type = trade['Call/Put']
+            bought_price = trade['Price Bought']
             shares = trade['Shares']
             
             if option_type == "Call":

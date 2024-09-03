@@ -2,14 +2,26 @@
 
 ## Manual Trading
 
-### **Stock Tickets**
+### **Stock Trading**
 
-Through `stock_trading_ticket.py`, we are able to create a new ticket to trade stock at the current market price. This will store all your previous portfolio trades in a csv file `data/stock_trade_log.csv` which will contain the `Date, Ticker, Shares, Price` information for every previous trade.
+#### **stock_trading_ticket.py**
 
-We may calculate our entire portfolio calculation through `stock_portfolio_calculations.py`. This file *requires* there to be a trade executed.
+This script provides a graphical user interface (GUI) to submit stock trades. It allows users to enter a ticker symbol and the number of shares they wish to trade. Upon submission, the script retrieves the current market price for the specified stock and logs the trade into `data/stock_trade_log.csv`, which records the trade details including the date, ticker, number of shares, and price.
 
-### **Options Tickets**
+#### **stock_portfolio_calculations.py**
 
-The options tickets can be accessed at `option_trading_ticket.py` which is similar to `stock_trading_ticket.py` with the additional option of executing a call or put. There is no cost for executing a trade.
+This script calculates and displays the current value of your stock portfolio. It reads from `data/stock_trade_log.csv`, retrieves the latest stock prices, and computes the total portfolio value and the gain or loss for each stock.
 
-We may calculate our entire portfolio calculation through `option_portfolio_calculations.py`. This file *requires* there to be a trade executed.
+### **Options Trading**
+
+#### **option_trading_ticket.py**
+
+This script provides a GUI for submitting options trades, allowing users to specify the ticker symbol, number of shares, and whether the option is a call or put. It logs this information into `data/options_trade_log.csv`, which includes the date, ticker, number of shares, price bought, and type of option.
+
+#### **option_portfolio_calculations.py**
+
+This script calculates the value of your options portfolio. It reads from `data/options_trade_log.csv`, retrieves the latest prices, and computes the value of call and put options. It also provides a summary of gains or losses for each option.
+
+## Future Enhancements
+
+Plans are in place to integrate automated trading strategies to further enhance the trading experience.
